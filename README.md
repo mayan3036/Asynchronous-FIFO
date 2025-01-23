@@ -33,7 +33,7 @@ An **Asynchronous FIFO** is a hardware component used to safely transfer data be
 - **Data Buffering**: Handling variations in data flow rates between subsystems.
 - **FPGA and ASIC Designs**: Managing communication between modules with different clock frequencies.
 
-![FIFO in System](./Images/fifo_in_system.png)  
+![FIFO in System](Images/fifo_in_system.png)  
 *Figure 1: FIFO in a system with two clock domains.*
 
 ---
