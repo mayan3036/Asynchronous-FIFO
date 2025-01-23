@@ -33,7 +33,7 @@ An **Asynchronous FIFO** is a hardware component used to safely transfer data be
 - **Data Buffering**: Handling variations in data flow rates between subsystems.
 - **FPGA and ASIC Designs**: Managing communication between modules with different clock frequencies.
 
-![FIFO in System](./images/fifo_in_system.png)  
+![FIFO in System](./Images/fifo_in_system.png)  
 *Figure 1: FIFO in a system with two clock domains.*
 
 ---
@@ -61,7 +61,7 @@ The FIFO memory is implemented as a **dual-port RAM**, allowing simultaneous rea
 - **Read Pointer**: Tracks the next location to read data.
 - **Synchronized Pointers**: The write pointer is synchronized to the read clock domain, and vice versa, to ensure accurate full and empty flag generation.
 
-![Async FIFO Block Diagram](./images/async_fifo_block_diagram.png)  
+![Async FIFO Block Diagram](./Images/async_fifo_block_diagram.png)  
 *Figure 2: Block diagram of the asynchronous FIFO design.*
 
 ---
@@ -77,7 +77,7 @@ The FIFO memory is implemented as a **dual-port RAM**, allowing simultaneous rea
   - `write_full`: Indicates the FIFO is full.
   - `read_empty`: Indicates the FIFO is empty.
 
-![FIFO RTL Schematic](./images/fifo_rtl_schematic.png)  
+![FIFO RTL Schematic](./Images/fifo_rtl_schematic.png)  
 *Figure 3: RTL schematic of the top-level FIFO module.*
 
 ### Memory Module
@@ -88,7 +88,7 @@ The FIFO memory is implemented as a **dual-port RAM**, allowing simultaneous rea
   - `read_addr`: Address for reading data.
   - `memory`: The internal memory array.
 
-![FIFO Memory RTL Schematic](./images/fifo_memory_rtl_schematic.png)  
+![FIFO Memory RTL Schematic](./Images/fifo_memory_rtl_schematic.png)  
 *Figure 4: RTL schematic of the FIFO memory module.*
 
 ### Pointer Handlers
@@ -97,17 +97,17 @@ The FIFO memory is implemented as a **dual-port RAM**, allowing simultaneous rea
 - **Write Pointer Handler**: `Write_Pointer_Handler.v`
   - Manages the write pointer and generates the `write_full` flag.
 
-![Read Pointer Handler RTL Schematic](./images/read_pointer_handler_rtl.png)  
+![Read Pointer Handler RTL Schematic](./Images/read_pointer_handler_rtl.png)  
 *Figure 5: RTL schematic of the read pointer handler.*
 
-![Write Pointer Handler RTL Schematic](./images/write_pointer_handler_rtl.png)  
+![Write Pointer Handler RTL Schematic](./Images/write_pointer_handler_rtl.png)  
 *Figure 6: RTL schematic of the write pointer handler.*
 
 ### Synchronization Logic
 - **File**: `Clock_Domain_Synchronizer.v`
 - **Description**: Implements a two-stage flip-flop synchronizer to safely transfer pointers between clock domains.
 
-![2-Stage Synchronizer RTL Schematic](./images/two_stage_sync_rtl.png)  
+![2-Stage Synchronizer RTL Schematic](./Images/two_stage_sync_rtl.png)  
 *Figure 7: RTL schematic of the 2-stage synchronizer.*
 
 ---
@@ -123,7 +123,7 @@ The FIFO memory is implemented as a **dual-port RAM**, allowing simultaneous rea
 ### Waveform
 The testbench generates a waveform that captures the behavior of the FIFO under different conditions. The waveform includes all three test cases, as shown below:
 
-![Testbench Waveform](./images/SIMULATION.png)  
+![Testbench Waveform](./Images/SIMULATION.png)  
 *Figure 8: Testbench waveform showing write/read operations, FIFO full condition, and FIFO empty condition.*
 
 ---
